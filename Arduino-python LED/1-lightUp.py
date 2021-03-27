@@ -7,4 +7,6 @@ def lightUp(ledNumber, period):
     board.digital[N[ledNumber]].write(1)
     time.sleep(period)
     board.digital[N[ledNumber]].write(0)
-lightUp(5,10)
+ledNumber = int(input('Введи номер светодиода: '))
+period = float(input('Время: '))
+lightUp(ledNumber, period)

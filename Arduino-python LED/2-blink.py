@@ -9,4 +9,8 @@ def blink(ledNumber, blinkCount, blinkPeriod):
         time.sleep(blinkPeriod)
         board.digital[N[ledNumber]].write(0)
         time.sleep(blinkPeriod)
-blink(0,10,0.5)
+ledNumber = int(input('Введи номер светодиода: '))
+blinkCount = int(input('Количество миганий: '))
+blinkPeriod = float(input('Интервал: '))
+blink(ledNumber, blinkCount, blinkPeriod)
+ 

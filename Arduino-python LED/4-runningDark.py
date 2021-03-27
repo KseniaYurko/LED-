@@ -15,4 +15,4 @@ def runningDark(count, period):
             N[0]=N[0]+1
         elif N[0]>=9:
             N[0]=N[0]-7
-runningDark(300, 0.2)
+runningDark(300, 0.2) 

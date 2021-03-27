@@ -19,4 +19,4 @@ def decToBinList(decNumber):
         elif number[i] == '1':
             board.digital[N[i]].write(1)
 decNumber = int(input('Введите число от 0 до 255: '))
-decToBinList(decNumber)
+decToBinList(decNumber) 
