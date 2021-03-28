@@ -3,6 +3,7 @@ import time
 
 board = pyfirmata.Arduino("COM4")
 N = [2,3,4,5,6,7,8,9]
+
 def lightUp(ledNumber, period):
     board.digital[N[ledNumber]].write(1)
     time.sleep(period)
