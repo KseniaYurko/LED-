@@ -1,23 +1,24 @@
 import pyfirmata
-from time import sleep
+from pyfirmata import Arduino, INPUT, PWM
+import time
 
 board = pyfirmata.Arduino("COM4")
 
+it = pyfirmata.util.Iterator(board)
+it.start()
 
+LED = board.get_pin('d:5:p')
 
-board.digital[3].write(0)
-
-try:
-    board.digital[3].ChangeDutyCycle(50)
-    input('F=50Hz, DC=50%. Press Enter...')
-    board.digital[3].ChangeDutyCycle(20)
-    input('F=50Hz, DC=20%. Press Enter...')
-    board.digital[3].ChangeFrequency(10)
-    board.digital[3].ChangeDutyCycle(80)
-    input('F=10Hz, DC=80%. Press Enter...')
-    board.digital[3].ChangeDutyCycle(10)
-    input('F=10Hz, DC=10%. Press Enter to exit...')
-except KeyboardInterrupt:
-    pass
-
-pwm.stop()
+l = 0
+count = int(input('Сколько раз повторить? '))
+for i in range(count):
+    while l<=1:
+        LED.write(l)
+        time.sleep(0.01)
+        LED.write(0)
+        l = l + 0.01
+    while l>=0:
+        LED.write(l)
+        time.sleep(0.01)
+        LED.write(0)
+        l = l - 0.01        
